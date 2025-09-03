@@ -21,13 +21,13 @@ int get_positive_integer (const std::wstring& prompt)
             else
             {
                 std::wcout << L"Ошибка: число должно быть положительным!\n"
-                          << std::endl;
+                           << std::endl;
             }
         }
         else
         {
             std::wcout << L"Ошибка: введите корректное целое число!\n"
-                      << std::endl;
+                       << std::endl;
 
             std::wcin.clear();
             std::wcin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
