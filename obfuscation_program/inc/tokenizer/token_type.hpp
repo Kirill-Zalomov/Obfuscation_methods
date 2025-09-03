@@ -7,7 +7,7 @@ enum token_type
     unknown_,
     literal_,
     key_word_,
-    data_type,
+    data_type_,
     identifier_,
     operator_,
     semicolon_,
