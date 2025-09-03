@@ -3,11 +3,26 @@
 
 
 #include <string>
+#include <regex>
+#include <unordered_set>
 
 
-class toke_classifiers
+class token_classifier
 {
+    private: static const std::unordered_set<std::string> key_words;
+    private: static const std::unordered_set<std::string> data_types;
+    private: static const std::unordered_set<std::string> operators;
+
+
+    private: static const std::regex identifier_pattern;
+    private: static const std::regex literal_pattern;
+    private: static const std::regex comment_pattern;
+    private: static const std::regex multi_line_comment_pattern;
+    private: static const std::regex preprocessor_pattern;
+
+
     public: bool is_key_word(const std::string& token) const;
+    public: bool is_whitespace(const std::string& token) const;
     public: bool is_literal(const std::string& token) const;
     public: bool is_data_type(const std::string& token) const;
     public: bool is_identifier(const std::string& token) const;

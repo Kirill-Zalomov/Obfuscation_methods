@@ -6,6 +6,7 @@ enum token_type
 {
     unknown_,
     literal_,
+    space_,
     key_word_,
     data_type_,
     identifier_,
