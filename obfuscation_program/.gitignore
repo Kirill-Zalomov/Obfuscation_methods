@@ -1,0 +1,5 @@
+build_debug/
+build_release/
+
+.kdev4/
+*.kdev4

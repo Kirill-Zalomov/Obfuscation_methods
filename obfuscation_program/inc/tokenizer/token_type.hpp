@@ -2,7 +2,8 @@
 #define TOKEN_TYPE_HPP
 
 
-enum token_type {
+enum token_type
+{
     unknown_,
     literal_,
     key_word_,
