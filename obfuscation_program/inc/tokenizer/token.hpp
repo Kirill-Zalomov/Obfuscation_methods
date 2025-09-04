@@ -21,6 +21,7 @@ class token
     public: std::string get_content() const noexcept;
     public: void set_content(const std::string& new_content) noexcept;
     public: token_type get_type() const noexcept;
+    public: std::string get_type_str() const noexcept;
     public: void set_type(token_type new_type) noexcept;
 
     // Операторы

@@ -9,7 +9,7 @@
 
 class tokenizer
 {
-    std::list<token> tokenize(const std::list<std::string>& lines_of_code) const;
+    public: std::list<token> tokenize(const std::list<std::string>& lines_of_code) const;
 };
 
 

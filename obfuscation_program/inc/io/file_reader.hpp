@@ -9,7 +9,7 @@
 
 class file_reader
 {
-    public: std::list<std::string> read_file_lines(const std::string& filename);
+    public: std::list<std::string> read_lines(const std::string& filename);
 };
 
 

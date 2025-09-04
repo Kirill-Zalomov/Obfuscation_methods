@@ -11,36 +11,28 @@ std::list<token> tokenizer::tokenize(const std::list<std::string>& lines_of_code
     std::list<token> tokens;
     token_classifier classifier;
 
-    // Рбработчик строки кода
     auto split_line_into_tokens = [&](const std::string& line) -> std::list<std::string>
     {
         std::list<std::string> parts;
         std::string current;
         for (size_t i = 0; i < line.size(); ++i) {
             char c = line[i];
-
-            // Проверяем на начало двухсимвольных операторов
             std::string two_chars = (i + 1 < line.size()) ? line.substr(i, 2) : "";
-
-            // Проверяем операторы с длиной 2 и более (например, ++, --, +=, == и др.)
             if (!two_chars.empty() && classifier.is_operator(two_chars)) {
                 if (!current.empty()) {
                     parts.push_back(current);
                     current.clear();
                 }
                 parts.push_back(two_chars);
-                i++; // пропускаем следующий символ т.к. это часть оператора
+                i++;
             }
-            // Односимвольные операторы и разделители (пробелы и символы, которые считаем отдельными токенами)
             else if (classifier.is_operator(std::string(1, c)) || std::isspace(c) ||
-            c == '(' || c == ')' || c == '{' || c == '}' || c == '[' || c == ']' ||
-            c == ';' || c == ',' || c == '.') {
-
+                     c == '(' || c == ')' || c == '{' || c == '}' || c == '[' || c == ']' ||
+                     c == ';' || c == ',' || c == '.') {
                 if (!current.empty()) {
                     parts.push_back(current);
                     current.clear();
                 }
-                // Добавляем оператор или символ как отдельный токен, кроме пробелов
                 if (!std::isspace(c)) {
                     parts.push_back(std::string(1, c));
                 }
@@ -55,14 +47,18 @@ std::list<token> tokenizer::tokenize(const std::list<std::string>& lines_of_code
         return parts;
     };
 
-    // Обработка всех строк кода
     for (const auto& line : lines_of_code) {
+        if (!line.empty() && line[0] == '#') {
+            // Добавляем всю строку как препроцессорный токен и переходим к следующей строке
+            token tk(line, token_type::preprocessor_directive_);
+            tokens.push_back(tk);
+            continue; // переходим к следующей строке
+        }
+
         auto line_tokens = split_line_into_tokens(line);
 
         for (const auto& t : line_tokens) {
             token tk(t);
-
-            // Классификация токена
             if (classifier.is_key_word(t)) {
                 tk.set_type(token_type::key_word_);
             }
@@ -120,6 +116,6 @@ std::list<token> tokenizer::tokenize(const std::list<std::string>& lines_of_code
             tokens.push_back(tk);
         }
     }
-
     return tokens;
 }
+

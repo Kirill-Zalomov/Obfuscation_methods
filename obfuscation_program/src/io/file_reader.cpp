@@ -1,7 +1,7 @@
 #include "io/file_reader.hpp"
 
 
-std::list<std::string> file_reader::read_file_lines(const std::string& filename)
+std::list<std::string> file_reader::read_lines(const std::string& filename)
 {
     std::list<std::string> lines;
     std::ifstream file(filename);
