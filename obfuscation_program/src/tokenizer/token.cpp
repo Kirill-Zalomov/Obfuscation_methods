@@ -56,6 +56,7 @@ std::string token::get_type_str() const noexcept
     else if(type_ == token_type::closing_round_bracket_) type = "closing_round_bracket";
     else if(type_ == token_type::openning_triangle_bracket_) type = "openning_triangle_bracket";
     else if(type_ == token_type::closing_triangle_bracket_) type = "closing_triangle_bracket";
+    else if(type_ == token_type::new_line_symbol_) type = "new_line_symbol";
 
     return type;
 }

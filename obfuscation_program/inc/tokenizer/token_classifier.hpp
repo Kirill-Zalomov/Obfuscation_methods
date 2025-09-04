@@ -24,6 +24,7 @@ class token_classifier
     public: bool is_key_word(const std::string& token) const;
     public: bool is_whitespace(const std::string& token) const;
     public: bool is_literal(const std::string& token) const;
+    public: bool is_new_line_symbol(const std::string& token) const;
     public: bool is_data_type(const std::string& token) const;
     public: bool is_identifier(const std::string& token) const;
     public: bool is_operator(const std::string& token) const;

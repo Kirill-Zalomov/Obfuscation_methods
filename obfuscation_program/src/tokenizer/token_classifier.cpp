@@ -225,3 +225,9 @@ bool token_classifier::is_closing_triangle_bracket(const std::string& token) con
     return token == ">";
 }
 
+
+bool token_classifier::is_new_line_symbol(const std::string& token) const
+{
+    return token == "\n";
+}
+

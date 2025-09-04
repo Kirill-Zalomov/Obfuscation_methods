@@ -3,8 +3,11 @@
 
 void token_printer::print_token(const token& token_to_print) const noexcept
 {
-    std::cout << "token: { c:\"" << token_to_print.get_content()
-              << "\" t:" << token_to_print.get_type_str() << " }\n";
+    std::string content = token_to_print.get_content();
+    std::string type    = token_to_print.get_type_str();
+
+    std::cout << "token: { c:\"" << (content == "\n" ? "\\n" : content)
+              << "\" t:" << type << " }\n";
 
 }
 
