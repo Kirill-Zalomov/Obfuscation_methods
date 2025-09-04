@@ -31,10 +31,14 @@ class token_classifier
     public: bool is_comment(const std::string& token) const;
     public: bool is_multi_line_comment(const std::string& token) const;
     public: bool is_preprocessor_directive(const std::string& token) const;
-    public: bool is_openning_parenthesis(const std::string& token) const;
-    public: bool is_closing_parenthesis(const std::string& token) const;
-    public: bool is_openning_curly_brace(const std::string& token) const;
-    public: bool is_closing_curly_brace(const std::string& token) const;
+    public: bool is_openning_square_bracket(const std::string& token) const;
+    public: bool is_closing_square_bracket(const std::string& token) const;
+    public: bool is_openning_round_bracket(const std::string& token) const;
+    public: bool is_closing_round_bracket(const std::string& token) const;
+    public: bool is_openning_curly_bracket(const std::string& token) const;
+    public: bool is_closing_curly_bracket(const std::string& token) const;
+    public: bool is_openning_triangle_bracket(const std::string& token) const;
+    public: bool is_closing_triangle_bracket(const std::string& token) const;
 };
 
 

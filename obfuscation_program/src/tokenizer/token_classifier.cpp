@@ -18,7 +18,31 @@ const std::unordered_set<std::string> token_classifier::key_words = {
 
 const std::unordered_set<std::string> token_classifier::data_types = {
     "bool", "char", "char8_t", "char16_t", "char32_t", "double", "float",
-    "int", "long", "short", "signed", "unsigned", "void", "wchar_t"
+    "int", "long", "short", "signed", "unsigned", "void", "wchar_t",
+
+    "int8_t", "int16_t", "int32_t", "int64_t",
+    "uint8_t", "uint16_t", "uint32_t", "uint64_t",
+
+    "long double", "float_t", "double_t",
+
+    "size_t", "ssize_t", "ptrdiff_t", "time_t", "clock_t",
+
+    "auto",
+
+    "array", "vector", "deque", "forward_list", "list",
+    "set", "map", "multiset", "multimap",
+    "unordered_set", "unordered_map", "unordered_multiset", "unordered_multimap",
+    "stack", "queue", "priority_queue",
+
+    "string", "wstring", "u8string", "u16string", "u32string",
+    "basic_string", "string_view", "wstring_view", "u8string_view",
+    "u16string_view", "u32string_view",
+
+    "pair", "tuple",
+
+    "optional", "variant", "any",
+
+    "unique_ptr", "shared_ptr", "weak_ptr", "auto_ptr",
 };
 
 
@@ -154,26 +178,50 @@ bool token_classifier::is_preprocessor_directive(const std::string& token) const
 }
 
 
-bool token_classifier::is_openning_parenthesis(const std::string& token) const
+bool token_classifier::is_openning_round_bracket(const std::string& token) const
 {
-    return token == "(" || token == "[";
+    return token == "(";
 }
 
 
-bool token_classifier::is_closing_parenthesis(const std::string& token) const
+bool token_classifier::is_closing_round_bracket(const std::string& token) const
 {
-    return token == ")" || token == "]";
+    return token == ")";
 }
 
 
-bool token_classifier::is_openning_curly_brace(const std::string& token) const
+bool token_classifier::is_openning_square_bracket(const std::string& token) const
+{
+    return token == "[";
+}
+
+
+bool token_classifier::is_closing_square_bracket(const std::string& token) const
+{
+    return token == "]";
+}
+
+
+bool token_classifier::is_openning_curly_bracket(const std::string& token) const
 {
     return token == "{";
 }
 
 
-bool token_classifier::is_closing_curly_brace(const std::string& token) const
+bool token_classifier::is_closing_curly_bracket(const std::string& token) const
 {
     return token == "}";
+}
+
+
+bool token_classifier::is_openning_triangle_bracket(const std::string& token) const
+{
+    return token == "<";
+}
+
+
+bool token_classifier::is_closing_triangle_bracket(const std::string& token) const
+{
+    return token == ">";
 }
 

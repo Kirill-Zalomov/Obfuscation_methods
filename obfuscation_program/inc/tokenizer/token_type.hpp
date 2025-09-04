@@ -15,10 +15,14 @@ enum token_type
     comment_,
     multi_line_comment_,
     preprocessor_directive_,
-    openning_parenthesis_,
-    closing_parenthesis_,
-    openning_curly_brace_,
-    closing_curly_brace_,
+    openning_square_bracket_,
+    closing_square_bracket_,
+    openning_curly_bracket_,
+    closing_curly_bracket_,
+    openning_round_bracket_,
+    closing_round_bracket_,
+    openning_triangle_bracket_,
+    closing_triangle_bracket_,
 };
 
 
