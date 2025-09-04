@@ -9,12 +9,19 @@
 #include <iostream>
 #include <list>
 #include <string>
+#include <fstream>
 
 
 class token_printer
 {
     public: void print_token(const token& token_to_print) const noexcept;
+
     public: void print_tokens(const std::list<token>& tokens_to_print) const noexcept;
+
+    public: void print_tokens_in_file(
+        const std::string& filename,
+        const std::list<token>& tokens_to_print
+    );
 };
 
 

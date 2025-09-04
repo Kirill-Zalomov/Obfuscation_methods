@@ -16,4 +16,9 @@ add_executable(obfuscation_program
 )
 target_include_directories(obfuscation_program PUBLIC
     "inc/"
+    "inc/args/"
+    "inc/gui/"
+    "inc/io/"
+    "inc/obfuscation/"
+    "inc/tokenizer/"
 )
