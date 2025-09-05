@@ -3,3 +3,5 @@ build_release/
 
 .kdev4/
 *.kdev4
+
+*.txt
