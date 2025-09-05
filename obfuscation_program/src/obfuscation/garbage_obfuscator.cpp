@@ -1,7 +1,7 @@
 #include "obfuscation/garbage_obfuscator.hpp"
 
 
-static const std::vector<std::string> garbage_strings =
+const std::vector<std::string> garbage_obfuscator::garbage_strings =
 {
     // Числовые литералы
     "1;", "512453;", "-421512;", "041551;", "0x10abc9;", "591905925U;"
