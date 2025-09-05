@@ -19,7 +19,13 @@ void arg_checker::set_arg_to_check_(
 }
 
 
-bool arg_checker::check(std::list<std::string> argv) const
+bool arg_checker::check(const std::list<std::string>& argv) const
 {
-    return std::find(argv.begin(), argv.end(), arg_to_check_) != argv.end();
+    std::string prefix = arg_to_check_ + "=";
+    for (const auto& arg : argv) {
+        if (arg == arg_to_check_ || (arg.compare(0, prefix.size(), prefix) == 0)) {
+            return true;
+        }
+    }
+    return false;
 }

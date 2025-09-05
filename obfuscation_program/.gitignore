@@ -5,3 +5,4 @@ build_release/
 *.kdev4
 
 *.txt
+*.kate-swp

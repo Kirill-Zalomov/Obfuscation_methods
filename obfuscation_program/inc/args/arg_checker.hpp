@@ -16,7 +16,7 @@ class arg_checker
     public: void set_arg_to_check_(const std::string& new_arg_to_check) noexcept;
 
     public: explicit arg_checker(std::string arg_to_check);
-    public: bool check(std::list<std::string> argv) const;
+    public: bool check(const std::list<std::string>& argv) const;
 };
 
 

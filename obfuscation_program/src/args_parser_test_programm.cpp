@@ -29,14 +29,14 @@ int main(int argc, char** argv)
     checkers_.push_back(arg_checker("--in"));
     checkers_.push_back(arg_checker("--out"));
     checkers_.push_back(arg_checker("--add-garbage-lines"));
-    checkers_.push_back(arg_checker("--add-ramdom-whitespaces"));
+    checkers_.push_back(arg_checker("--add-random-whitespaces"));
     checkers_.push_back(arg_checker("--delete-newlines"));
     checkers_.push_back(arg_checker("--mess-up-comments"));
     checkers_.push_back(arg_checker("--rename-variables"));
 
     for (auto checker : checkers_)
     {
-        std::cout << std::setw(30) << checker.get_arg_to_check_() << ": "
+        std::cout << std::setw(25) << checker.get_arg_to_check_() << ": "
                   << (checker.check(args) ? "true" : "false") << "\n";
     }
 
