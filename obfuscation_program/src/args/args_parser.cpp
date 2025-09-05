@@ -21,7 +21,7 @@ bool args_parser::check_opt_add_random_whitespaces(const std::list<std::string>&
 
 bool args_parser::check_opt_mess_up_comments(const std::list<std::string>& args) const
 {
-    return std::find(args.begin(), args.end(), "--mess-up-comment") != args.end();
+    return std::find(args.begin(), args.end(), "--mess-up-comments") != args.end();
 }
 
 

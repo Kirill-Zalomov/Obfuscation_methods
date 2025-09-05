@@ -4,12 +4,16 @@
 
 #include <list>
 #include <string>
+#include <algorithm>
+#include <stdexcept>
 
 
 class arg_checker
 {
-    public: virtual ~arg_checker() = default;
-    public: virtual bool check(std::list<std::string> argv) const;
+    public: bool check(
+        std::list<std::string> argv,
+        const std::string& value_to_find
+    ) const;
 };
 
 

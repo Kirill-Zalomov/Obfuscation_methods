@@ -40,7 +40,7 @@ int main(int argc, char** argv)
               << "\n";
 
     std::cout << std::setw(30)
-              << "--mess-up-comment: "
+              << "--mess-up-comments: "
               << (args_parser_.check_opt_mess_up_comments(args) ? "true" : "false")
               << "\n";
 
