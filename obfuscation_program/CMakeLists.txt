@@ -6,19 +6,23 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 
-add_executable(obfuscation_program
-    "src/main.cpp"
+add_executable(tokenizator_test_programm
+    "src/tokenizator_test_programm.cpp"
     "src/tokenizer/token.cpp"
     "src/tokenizer/token_classifier.cpp"
     "src/tokenizer/token_printer.cpp"
     "src/tokenizer/tokenizer.cpp"
     "src/io/file_reader.cpp"
 )
-target_include_directories(obfuscation_program PUBLIC
+target_include_directories(tokenizator_test_programm PUBLIC
     "inc/"
-    "inc/args/"
-    "inc/gui/"
-    "inc/io/"
-    "inc/obfuscation/"
-    "inc/tokenizer/"
+)
+
+
+add_executable(args_parser_test_programm
+    "src/args_parser_test_programm.cpp"
+    "src/args/args_parser.cpp"
+)
+target_include_directories(args_parser_test_programm PUBLIC
+    "inc/"
 )
