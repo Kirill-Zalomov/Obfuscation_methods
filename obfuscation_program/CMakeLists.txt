@@ -22,6 +22,7 @@ target_include_directories(tokenizator_test_programm PUBLIC
 add_executable(args_parser_test_programm
     "src/args_parser_test_programm.cpp"
     "src/args/args_parser.cpp"
+    "src/args/arg_checker.cpp"
 )
 target_include_directories(args_parser_test_programm PUBLIC
     "inc/"
