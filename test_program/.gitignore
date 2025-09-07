@@ -1,5 +1,7 @@
 .kdev4/
 build/
+build_debug/
+build_release/
 
 
 *.backup
