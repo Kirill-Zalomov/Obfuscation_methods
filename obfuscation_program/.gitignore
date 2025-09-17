@@ -1,8 +1,0 @@
-build_debug/
-build_release/
-
-.kdev4/
-*.kdev4
-
-*.txt
-*.kate-swp
